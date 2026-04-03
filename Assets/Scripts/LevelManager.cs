@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 
 
     public class LevelManager : MonoBehaviour
     {
+        public GameObject spawner;
         public static LevelManager instance;
         public int currentLevel = 1;
 
@@ -12,6 +14,8 @@ using UnityEngine;
             instance = this;
             FindAnyObjectByType<Spawner>().SpawnTerrain();
             FindAnyObjectByType<Spawner>().SpawnCrab();
+            FindAnyObjectByType<Spawner>().SeagullSpawn();
+           
         }
 
         public void NextLevel()
@@ -26,8 +30,10 @@ using UnityEngine;
             
             // clear and respawn enemies
 
+            FindAnyObjectByType<Spawner>().SeagullSpawn();
             FindAnyObjectByType<Spawner>().SpawnTerrain();
             FindAnyObjectByType<Spawner>().SpawnCrab();
         }
-        
+
+       
     }

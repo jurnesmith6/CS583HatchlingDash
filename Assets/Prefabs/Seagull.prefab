@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6296880202540256714}
   - component: {fileID: 5859181401011285193}
   - component: {fileID: -7660206583901698857}
+  - component: {fileID: -6742489692050730792}
   m_Layer: 10
   m_Name: Seagull
   m_TagString: Seagull
@@ -138,3 +139,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &-6742489692050730792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085098658960295357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701622d7cbb294883b036d90e73ecf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

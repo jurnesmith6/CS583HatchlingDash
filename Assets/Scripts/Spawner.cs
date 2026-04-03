@@ -6,10 +6,15 @@ public class Spawner : MonoBehaviour
 
     public GameObject rockPrefab;
     public GameObject crabPrefab;
+    public GameObject seagullPrefab;
     public int cols = 4;
     public int rows = 12;
     public float xSpacing = 12f;
     public float ySpacing = 14f;
+    private float seagullSpawnXPos1 = -10f;
+    private float seagullSpawnXPos2 = 50f;
+    private float seagullSpawnYPos1 = -30f;
+    private float seagullSpawnYPos2 = 200f;
    
    
     List<Vector3> rockPos = new List<Vector3>(); 
@@ -76,6 +81,28 @@ public class Spawner : MonoBehaviour
             
         }
         
+    }
+
+    public void StopSeagullSpawn()
+    {
+        CancelInvoke("SpawnSeagull");
+    }
+
+    public void SeagullSpawn()
+    {
+        CancelInvoke("SpawnSeagull");
+        InvokeRepeating("SpawnSeagull", 5f, 5f);
+    }
+
+    public void SpawnSeagull()
+    {
+        Vector3 pos = new Vector3((Random.Range(0, 2) == 0) ? seagullSpawnXPos1 : seagullSpawnXPos2,
+            Random.Range(seagullSpawnYPos1, seagullSpawnYPos2), 0);
+        
+        Instantiate(seagullPrefab, pos, Quaternion.identity);
+        
+
+
     }
     
     
