@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3274979898917693382}
   - component: {fileID: 6464349531451726105}
   - component: {fileID: 4799340672248937011}
+  - component: {fileID: 8073535594646596140}
   m_Layer: 11
   m_Name: Crab
   m_TagString: Crab
@@ -138,3 +139,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8073535594646596140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722656462954198926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d48885ca110a4eb8b1f560e5bd9fb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

@@ -11,6 +11,7 @@ using UnityEngine;
         {
             instance = this;
             FindAnyObjectByType<Spawner>().SpawnTerrain();
+            FindAnyObjectByType<Spawner>().SpawnCrab();
         }
 
         public void NextLevel()
@@ -26,6 +27,7 @@ using UnityEngine;
             // clear and respawn enemies
 
             FindAnyObjectByType<Spawner>().SpawnTerrain();
+            FindAnyObjectByType<Spawner>().SpawnCrab();
         }
         
     }
