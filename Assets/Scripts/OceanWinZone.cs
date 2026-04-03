@@ -18,8 +18,9 @@ public class OceanWinZone : MonoBehaviour
     {
         if (obj.CompareTag("Player"))
         {
-            Debug.Log("You reached the ocean! You win!");
-            
+            Debug.Log("Level " + LevelManager.instance.currentLevel+ " Complete!");
+            LevelManager.instance.NextLevel();
+
         }
     }
 }
