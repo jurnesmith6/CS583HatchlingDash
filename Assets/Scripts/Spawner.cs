@@ -7,14 +7,12 @@ public class Spawner : MonoBehaviour
     public GameObject rockPrefab;
     public GameObject crabPrefab;
     public GameObject seagullPrefab;
+    public Camera cam;
     public int cols = 4;
     public int rows = 12;
     public float xSpacing = 12f;
     public float ySpacing = 14f;
-    private float seagullSpawnXPos1 = -10f;
-    private float seagullSpawnXPos2 = 50f;
-    private float seagullSpawnYPos1 = -30f;
-    private float seagullSpawnYPos2 = 200f;
+  
    
    
     List<Vector3> rockPos = new List<Vector3>(); 
@@ -96,9 +94,31 @@ public class Spawner : MonoBehaviour
 
     public void SpawnSeagull()
     {
-        Vector3 pos = new Vector3((Random.Range(0, 2) == 0) ? seagullSpawnXPos1 : seagullSpawnXPos2,
-            Random.Range(seagullSpawnYPos1, seagullSpawnYPos2), 0);
+       // Vector3 pos = new Vector3((Random.Range(0, 2) == 0) ? seagullSpawnXPos1 : seagullSpawnXPos2,
+       //     Random.Range(seagullSpawnYPos1, seagullSpawnYPos2), 0);
         
+       // Camera cam = Camera.main;
+
+       
+        // Get camera bounds in world space
+        float camHeight = 2f * cam.orthographicSize;
+        float camWidth = camHeight * cam.aspect;
+
+        float halfW = camWidth / 2f + 2f;
+        float halfH = camHeight / 2f + 2f;
+
+        Vector3 camPos = cam.transform.position;
+
+        // Pick a random edge: 0=left, 1=right, 2=top, 3=bottom
+        int edge = Random.Range(0, 4);
+
+        Vector3 pos = edge switch
+        {
+            0 => new Vector3(camPos.x - halfW, camPos.y + Random.Range(-halfH, halfH), 0f), // left
+            1 => new Vector3(camPos.x + halfW, camPos.y + Random.Range(-halfH, halfH), 0f), // right
+            2 => new Vector3(camPos.x + Random.Range(-halfW, halfW), camPos.y + halfH, 0f), // top
+            _ => new Vector3(camPos.x + Random.Range(-halfW, halfW), camPos.y - halfH, 0f), // bottom
+        };
         Instantiate(seagullPrefab, pos, Quaternion.identity);
         
 

@@ -863,6 +863,7 @@ MonoBehaviour:
   rockPrefab: {fileID: 4704038400033196740, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
   crabPrefab: {fileID: 7722656462954198926, guid: 5515c83bb5ca14d71874ea35e3e8f6e8, type: 3}
   seagullPrefab: {fileID: 6085098658960295357, guid: 06ce6f7fb4c4d49509bf489cf428ba57, type: 3}
+  cam: {fileID: 574374985}
   cols: 4
   rows: 13
   xSpacing: 12

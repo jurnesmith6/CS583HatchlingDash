@@ -151,3 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701622d7cbb294883b036d90e73ecf4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  player: {fileID: 0}
+  speed: 5
+  playerRadius: 5
+  diveRadius: 10

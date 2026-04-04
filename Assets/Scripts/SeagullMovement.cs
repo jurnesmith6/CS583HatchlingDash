@@ -3,8 +3,10 @@ using UnityEngine;
 public class SeagullMovement : MonoBehaviour
 {
     public Transform player;
-    public float speed = 5f;
-    public float playerRadius = 10f;
+    float speed = 10f;
+    private float diveSpeed = 15f;
+    float playerRadius = 7f;
+    float diveRadius = 15f;
 
     private Vector3 direction;
     private bool targetLock;
@@ -15,6 +17,8 @@ public class SeagullMovement : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         
         direction = (player.position - transform.position);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
         targetLock = true;
         
         
@@ -27,13 +31,16 @@ public class SeagullMovement : MonoBehaviour
         {
             //lock on to target
             direction = (player.position - transform.position);
-            transform.position += direction.normalized * (speed * Time.deltaTime);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            transform.position += direction.normalized * (((direction.magnitude < diveRadius ) ? diveSpeed : speed) * Time.deltaTime);
         }
         else
         {
             // lose lock
             targetLock = false;
-            transform.position += direction.normalized * (2f * speed * Time.deltaTime);
+            
+            transform.position += direction.normalized * (((direction.magnitude < playerRadius ) ? diveSpeed : speed) * Time.deltaTime);
                 
         }
 
