@@ -5,7 +5,7 @@ public class SeagullMovement : MonoBehaviour
     public Transform player;
     private float speed = 10f;
     private float diveSpeed;
-    float playerRadius = 7f;
+    float playerRadius = 5f;
     float diveRadius = 15f;
 
     private Vector3 direction;

@@ -11,7 +11,7 @@ using UnityEngine;
         int rows = 10;
         int cols = 3;
         float crabSpeed = 3f;
-        float seagullSpeed = 5f;
+        float seagullSpeed = 10f;
         float seagullQuantum = 12f;
         int peakDiff = 30;
         
