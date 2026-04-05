@@ -8,18 +8,30 @@ public class Spawner : MonoBehaviour
     public GameObject crabPrefab;
     public GameObject seagullPrefab;
     public Camera cam;
-    public int cols = 4;
-    public int rows = 12;
-    public float xSpacing = 12f;
-    public float ySpacing = 14f;
+    private int cols = 4;
+    private int rows = 10;
+    private float xSpacing;
+    private float ySpacing;
+    private float xJitter, yJitter;
+    private float seagullSpeed;
+    private float platformLength = 182f;
+    private float platformWidth = 48f;
+    
   
    
    
     List<Vector3> rockPos = new List<Vector3>(); 
     
     
-    public void SpawnTerrain()
+    public void SpawnTerrain(int cols, int rows)
+    
     {
+       
+        xSpacing = platformWidth / cols;
+        ySpacing = platformLength / rows;
+        float xJitter = xSpacing / 4;
+        float yJitter = ySpacing / 2;
+        
         // clear rocks
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Rock"))
         {
@@ -36,8 +48,8 @@ public class Spawner : MonoBehaviour
             {
                 Vector3 position = new Vector3(x * xSpacing, y * ySpacing, 0);
                 
-                position.x += Random.Range(-4f, 4f);
-                position.y += Random.Range(-5f, 5f);
+                position.x += Random.Range(-xJitter, xJitter);
+                position.y += Random.Range(-yJitter, yJitter);
                 rockPos.Add(position);
                 Instantiate(rockPrefab, position, Quaternion.identity);
             }
@@ -46,7 +58,7 @@ public class Spawner : MonoBehaviour
 
     }
 
-    public void SpawnCrab()
+    public void SpawnCrab(float speed)
     {
         // clear crabs
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Crab"))
@@ -62,8 +74,9 @@ public class Spawner : MonoBehaviour
                 Vector3 rockA = rockPos[i];
                 Vector3 rockB =  rockPos[j];
                 float distance = Vector3.Distance(rockA, rockB);
-                
-                if (distance <= 15f && distance > 3f)
+                float maxDistance = Mathf.Sqrt(xSpacing * xSpacing + ySpacing * ySpacing);
+                float minDistance = Mathf.Sqrt(xJitter * xJitter + yJitter * yJitter);
+                if (distance <= maxDistance && distance > minDistance)
                 {
                     Vector3 spawnPos = (rockA + rockB) / 2f;
 
@@ -72,6 +85,7 @@ public class Spawner : MonoBehaviour
                     CrabMovement movement = crab.GetComponent<CrabMovement>();
                     movement.pointA = rockA;
                     movement.pointB = rockB;
+                    movement.SetSpeed(speed);
                     
                 }
                 
@@ -81,15 +95,11 @@ public class Spawner : MonoBehaviour
         
     }
 
-    public void StopSeagullSpawn()
+    public void SeagullSpawn(float seagullSpeed, float time)
     {
+        this.seagullSpeed = seagullSpeed;
         CancelInvoke("SpawnSeagull");
-    }
-
-    public void SeagullSpawn()
-    {
-        CancelInvoke("SpawnSeagull");
-        InvokeRepeating("SpawnSeagull", 5f, 5f);
+        InvokeRepeating("SpawnSeagull", time,time);
     }
 
     public void SpawnSeagull()
@@ -119,8 +129,11 @@ public class Spawner : MonoBehaviour
             2 => new Vector3(camPos.x + Random.Range(-halfW, halfW), camPos.y + halfH, 0f), // top
             _ => new Vector3(camPos.x + Random.Range(-halfW, halfW), camPos.y - halfH, 0f), // bottom
         };
-        Instantiate(seagullPrefab, pos, Quaternion.identity);
+        GameObject seagull = Instantiate(seagullPrefab, pos, Quaternion.identity);
         
+        SeagullMovement movement = seagull.GetComponent<SeagullMovement>();
+        movement.SetSpeed(seagullSpeed);
+
 
 
     }

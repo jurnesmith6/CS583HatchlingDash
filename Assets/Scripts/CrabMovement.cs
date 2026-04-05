@@ -5,7 +5,7 @@ public class CrabMovement : MonoBehaviour
     
     public Vector3 pointA;
     public Vector3 pointB;
-    public float speed = 2f;
+    private float speed = 2f;
     private Vector3 target;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,5 +23,10 @@ public class CrabMovement : MonoBehaviour
         {
             target = (target == pointA) ? pointB : pointA;
         }
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
     }
 }

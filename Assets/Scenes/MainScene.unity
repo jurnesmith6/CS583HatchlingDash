@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed201f961ff8f4279969740cd9d0c4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 5
+  moveSpeed: 10
 --- !u!61 &131436730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -864,10 +864,6 @@ MonoBehaviour:
   crabPrefab: {fileID: 7722656462954198926, guid: 5515c83bb5ca14d71874ea35e3e8f6e8, type: 3}
   seagullPrefab: {fileID: 6085098658960295357, guid: 06ce6f7fb4c4d49509bf489cf428ba57, type: 3}
   cam: {fileID: 574374985}
-  cols: 4
-  rows: 13
-  xSpacing: 12
-  ySpacing: 14
 --- !u!4 &1756476084
 Transform:
   m_ObjectHideFlags: 0

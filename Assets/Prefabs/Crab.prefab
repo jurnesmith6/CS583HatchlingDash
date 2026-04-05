@@ -151,3 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d48885ca110a4eb8b1f560e5bd9fb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  pointA: {x: 0, y: 0, z: 0}
+  pointB: {x: 0, y: 0, z: 0}
+  speed: 5

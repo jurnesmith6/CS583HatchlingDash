@@ -3,8 +3,8 @@ using UnityEngine;
 public class SeagullMovement : MonoBehaviour
 {
     public Transform player;
-    float speed = 10f;
-    private float diveSpeed = 15f;
+    private float speed = 10f;
+    private float diveSpeed;
     float playerRadius = 7f;
     float diveRadius = 15f;
 
@@ -22,6 +22,12 @@ public class SeagullMovement : MonoBehaviour
         targetLock = true;
         
         
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+        diveSpeed = speed * 1.5f;
     }
 
     void Update()
