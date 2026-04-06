@@ -8,6 +8,7 @@ public class CrabDeath : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("YOU DIED");
+            LevelManager.instance.RestartGame();
             
         }
     }

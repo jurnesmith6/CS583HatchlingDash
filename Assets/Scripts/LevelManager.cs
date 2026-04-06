@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
-
-    public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
     {
         public GameObject spawner;
         public static LevelManager instance;
         public int currentLevel = 1;
+        public static ScoreCounter scoreCounter;
         int rows = 10;
         int cols = 3;
         float crabSpeed = 3f;
@@ -19,6 +20,10 @@ using UnityEngine;
         void Awake()
         {
            
+            // Find the ScoreCounter object 
+            GameObject scoreGo = GameObject.Find("ScoreCounter");
+            scoreCounter = scoreGo.GetComponent<ScoreCounter>();
+            
             instance = this;
             FindAnyObjectByType<Spawner>().SpawnTerrain(cols, rows);
             FindAnyObjectByType<Spawner>().SpawnCrab(crabSpeed);
@@ -28,7 +33,9 @@ using UnityEngine;
 
         public void NextLevel()
         {
-            currentLevel++;
+
+            
+            scoreCounter.updateScore(++currentLevel);
             Debug.Log("Level: " + currentLevel);
             
             // reset player position
@@ -60,6 +67,14 @@ using UnityEngine;
             FindAnyObjectByType<Spawner>().SpawnCrab(crabSpeed);
             FindAnyObjectByType<Spawner>().SeagullSpawn(seagullSpeed, seagullQuantum);
         }
+        
+        public void RestartGame()
+        {
+            HighScore.TRY_SET_HIGH_SCORE(currentLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        
 
        
     }
