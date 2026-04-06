@@ -5,7 +5,7 @@ public class SeagullMovement : MonoBehaviour
     public Transform player;
     private float speed = 10f;
     private float diveSpeed;
-    float playerRadius = 5f;
+    float playerRadius = 5.5f;
     float diveRadius = 15f;
 
     private Vector3 direction;
@@ -18,7 +18,7 @@ public class SeagullMovement : MonoBehaviour
         
         direction = (player.position - transform.position);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + 240f);
         targetLock = true;
         
         
@@ -38,7 +38,7 @@ public class SeagullMovement : MonoBehaviour
             //lock on to target
             direction = (player.position - transform.position);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle + 240f);
             transform.position += direction.normalized * (((direction.magnitude < diveRadius ) ? diveSpeed : speed) * Time.deltaTime);
         }
         else
