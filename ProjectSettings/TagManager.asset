@@ -8,6 +8,7 @@ TagManager:
   - Crab
   - Rock
   - Seaweed
+  - PalmTree
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Crab
   - Rock
   - Seaweed
-  - 
+  - PalmTree
   - 
   - 
   - 
@@ -44,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 1514613175
     locked: 0
   m_RenderingLayers:
   - Default

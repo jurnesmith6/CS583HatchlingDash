@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject rockPrefab;
     public GameObject crabPrefab;
     public GameObject seagullPrefab;
+    public GameObject treePrefab;
     public Camera cam;
     private int cols = 4;
     private int rows = 10;
@@ -39,6 +40,12 @@ public class Spawner : MonoBehaviour
         }
         rockPos.Clear();
         
+        //clear trees
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PalmTree"))
+        {
+            Destroy(obj);
+        }
+        
 
         //spawn rocks
 
@@ -55,7 +62,24 @@ public class Spawner : MonoBehaviour
             }
 
         }
+        
+       // SpawnTrees();
 
+    }
+
+    void SpawnTrees()
+    {
+        for (int x = 0; x < 2; x++)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                Vector3 position = new Vector3(x * 24f, y * 18.2f, 0);
+                position.x += Random.Range(-6f, 6f);
+                position.y += Random.Range(-9f, 9f);
+                Instantiate(treePrefab, position, Quaternion.identity);
+            }
+
+        }
     }
 
     public void SpawnCrab(float speed)

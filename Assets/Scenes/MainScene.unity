@@ -223,7 +223,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &131436732
 SpriteRenderer:
@@ -293,7 +293,7 @@ Transform:
   m_GameObject: {fileID: 131436728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: -11, z: 0}
+  m_LocalPosition: {x: 19.05, y: -11.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -680,6 +680,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1032410305
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.491993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.064903
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752164545727114204, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704038400033196740, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
+      propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
 --- !u!1 &1229759563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1317,7 @@ MonoBehaviour:
   rockPrefab: {fileID: 4704038400033196740, guid: 599f91059135a42639bb753bd0aa4821, type: 3}
   crabPrefab: {fileID: 7722656462954198926, guid: 5515c83bb5ca14d71874ea35e3e8f6e8, type: 3}
   seagullPrefab: {fileID: 6085098658960295357, guid: 06ce6f7fb4c4d49509bf489cf428ba57, type: 3}
+  treePrefab: {fileID: 1470525429455082191, guid: a2c24649f7a2146e7b969a1f6aa0bae7, type: 3}
   cam: {fileID: 574374985}
 --- !u!4 &1756476084
 Transform:
@@ -1335,7 +1393,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f6c4fc264dba840758ec4e341f79ac2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3107,3 +3165,4 @@ SceneRoots:
   - {fileID: 1756476084}
   - {fileID: 1373712002}
   - {fileID: 373196312}
+  - {fileID: 1032410305}
