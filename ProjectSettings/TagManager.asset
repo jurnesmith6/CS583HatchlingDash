@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - Seaweed
   - PalmTree
+  - Border
   layers:
   - Default
   - TransparentFX
@@ -19,13 +20,13 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - player
   - Seagull
   - Crab
   - Rock
   - Seaweed
   - PalmTree
-  - 
+  - Border
   - 
   - 
   - 

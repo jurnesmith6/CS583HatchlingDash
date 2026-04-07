@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     private float xJitter, yJitter;
     private float seagullSpeed;
     private float platformLength = 182f;
-    private float platformWidth = 48f;
+    private float platformWidth = 60f;
     
   
    

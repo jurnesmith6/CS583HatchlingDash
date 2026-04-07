@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -70,10 +71,26 @@ public class LevelManager : MonoBehaviour
         
         public void RestartGame()
         {
+            
             HighScore.TRY_SET_HIGH_SCORE(currentLevel);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(DeathSequence());
+            
         }
 
+        IEnumerator DeathSequence()
+        {
+            // Freeze game
+            Time.timeScale = 0f;
+            
+            yield return new WaitForSecondsRealtime(0.5f);
+
+            // Unfreeze before reload
+            Time.timeScale = 1f;
+            
+            // restart game
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+        }
         
 
        

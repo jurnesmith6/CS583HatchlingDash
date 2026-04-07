@@ -24,16 +24,17 @@ public class TurtlePlayerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
         
         // no backward movement
-        if (moveY < 0)
+        if (moveY < 0 )
         {
             moveY = 0;
         }
+        
 
         movement = new Vector2(moveX, moveY).normalized;
     }
 
     private void FixedUpdate()
     {
-        rbComponent.MovePosition(rbComponent.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rbComponent.MovePosition(rbComponent.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 }

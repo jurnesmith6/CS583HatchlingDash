@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1538797948360096213}
   - component: {fileID: 6082615229023504877}
   - component: {fileID: -602399241038655042}
+  - component: {fileID: 738186925606730010}
   m_Layer: 11
   m_Name: Crabb
   m_TagString: Crab
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 7722656462954198926}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.10875, y: -6.6109266, z: 0}
+  m_LocalPosition: {x: 15.1570015, y: 71.76739, z: 0}
   m_LocalScale: {x: 13, y: 13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +105,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7722656462954198926}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -131,7 +132,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.000000007450581, y: -0.043003064}
+  m_Offset: {x: 0.000000007450581, y: -0.037407998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -141,7 +142,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.23109756, y: 0.10399387}
+  m_Size: {x: 0.23109756, y: 0.072661184}
   m_EdgeRadius: 0
 --- !u!114 &8073535594646596140
 MonoBehaviour:
@@ -176,7 +177,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7722656462954198926}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -318,3 +319,69 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &738186925606730010
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722656462954198926}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.24, y: 0.19}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.03754771, y: 0.069261946}
+      - {x: -0.060690694, y: 0.047095567}
+      - {x: -0.081288196, y: -0.0064960383}
+      - {x: -0.09456526, y: 0.00060281623}
+      - {x: -0.1170471, y: -0.0157458}
+      - {x: -0.11655816, y: -0.052852247}
+      - {x: -0.092296824, y: -0.06867033}
+      - {x: -0.086428754, y: -0.093880825}
+      - {x: -0.03647797, y: -0.09459324}
+      - {x: -0.020090107, y: -0.07082944}
+      - {x: 0.015679285, y: -0.0733002}
+      - {x: 0.032385975, y: -0.091537386}
+      - {x: 0.07437288, y: -0.08977793}
+      - {x: 0.08610358, y: -0.065562814}
+      - {x: 0.11864634, y: -0.0625093}
+      - {x: 0.12073649, y: -0.038307097}
+      - {x: 0.09538112, y: -0.0088336095}
+      - {x: 0.09202389, y: 0.018143356}
+      - {x: 0.03621444, y: 0.1039528}
+  m_UseDelaunayMesh: 1
